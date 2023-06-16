@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- ======= Header Fragment Start======= -->
+<header th:fragment="adminHeader" id="adminHeader" class="header fixed-top d-flex align-items-center">
+
+  <!-- Start Logo -->
+  <div class="d-flex align-items-center justify-content-between">
+    <a th:href="@{/adminDashboard}" class="logo d-flex align-items-center">
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <span class="d-none d-lg-block">Decorize LivSpace</span>
+    </a>
+    <i class="bx bx-list-ul toggle-sidebar-btn"></i>
+  </div>
+  <!-- End Logo -->
+</header>
+<!-- ======= Header Fragment End======= -->
+
+<!-- ======= Side NavBar Fragment Start======= -->
+<aside th:fragment="adminSidebar" id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" th:href="@{/adminDashboard}">
+        <i class='bx bxs-dashboard'></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" th:href="@{/post/new}">
+        <i class='bx bxs-edit'></i>
+        <span>Create Post</span>
+      </a>
+    </li>
+
+    <!--  Heading - Page Nav -->
+    <li class="nav-heading">Pages</li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" th:href="@{/}">
+        <i class='bx bxs-home-alt-2'></i>
+        <span>Home</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed"  th:href="@{/tutorials}">
+        <i class='bx bxs-book-open'></i>
+        <span>Tutorials</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed"  th:href="@{/adminDashboard}">
+        <i class='bx bxs-user-detail'></i>
+        <span>Profile</span>
+      </a>
+    </li>
+    <!-- Start Sign Out Page Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" th:href="@{/login}">
+        <i class='bx bx-log-out'></i>
+        <span>Sign Out</span>
+      </a>
+    </li>
+    <!-- End Sign Out Page Nav -->
+  </ul>
+</aside>
+<!-- ======= Side NavBar Fragment End======= -->
+
+
+
+<!-- ======= Footer Fragment Start======= -->
+<footer th:fragment="adminFooter" id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Decorize LivSpace</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">Designed by <i>Lidvitha Reddy</i> & <i>Gayathri Reddy</i>
+  </div>
+</footer><!-- End Footer -->
+<!-- ======= Footer Fragment End======= -->
+
+
+</body>
+</html>

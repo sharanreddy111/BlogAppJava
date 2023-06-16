@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>userFragments</title>
+</head>
+<body>
+
+<!-- ======= Header Fragment Start======= -->
+<header th:fragment="userHeader" id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <h3 class="text-light"><a th:href="@{/}"><span>Decorize Livspace</span></a></h3>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto"  th:href="@{/}">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <li class="dropdown"><a href="#services"><span>Services</span> <i class="bx bx-chevron-down"></i></a>
+                    <ul>
+                        <li><a th:href="@{/tutorials}">Installing Light Fixtures</a></li>
+                        <li><a th:href="@{/tutorials}">Refinishing furniture</a></li>
+                        <li><a th:href="@{/tutorials}">Painting</a></li>
+                        <li><a th:href="@{/tutorials}">Custom Storage Solutions</a></li>
+                        <li><a th:href="@{/tutorials}">Kitchen Upgrades</a></li>
+                    </ul>
+                </li>
+                <li><a th:href="@{/tutorials}" class="active">Tutorials</a></li>
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" th:href="@{/userProfile}">User</a></li>
+                <li><a class="nav-link scrollto" th:href="@{/adminDashboard}">Admin</a></li>
+            </ul>
+            <i class="bx bx-list-ul mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+<!-- ======= Header Fragment End======= -->
+
+
+<!-- ======= Tutorial Sidebar Fragment Start======= -->
+<div th:fragment="tutorialSidebar" class="col-lg-4">
+
+    <div class="sidebar">
+
+        <h3 class="sidebar-title">Search</h3>
+        <div class="sidebar-item search-form">
+            <form action="">
+                <input type="text">
+                <button type="submit"><i class="bx bx-search"></i></button>
+            </form>
+        </div><!-- End sidebar search formn-->
+
+        <h3 class="sidebar-title">Categories</h3>
+        <div  class="sidebar-item categories">
+            <ul>
+                <li><a href="#">Ceiling Fan with Light<span>(11)</span></a></li>
+                <li><a href="#">Pendant<span>(12)</span></a></li>
+                <li><a href="#">Chandelier <span>(21)</span></a></li>
+
+            </ul>
+        </div><!-- End sidebar categories-->
+
+
+        <h3 class="sidebar-title">Tags</h3>
+        <div class="sidebar-item tags">
+            <ul>
+                <li><a href="#">Hanging</a></li>
+                <li><a href="#">Suspension</a></li>
+                <li><a href="#">LED</a></li>
+                <li><a href="#">Crystal</a></li>
+                <li><a href="#">Mount</a></li>
+                <li><a href="#">Wall-light</a></li>
+                <li><a href="#">Modern</a></li>
+                <li><a href="#">Chrome</a></li>
+                <li><a href="#">Vintage</a></li>
+                <li><a href="#">Landscape</a></li>
+                <li><a href="#">Adjustable</a></li>
+                <li><a href="#">Outdoor Fixture</a></li>
+                <li><a href="#">Pathway</a></li>
+                <li><a href="#">Fan-light Combo</a></li>
+                <li><a href="#">MakeUp Light</a></li>
+                <li><a href="#">Motion Sensor</a></li>
+            </ul>
+        </div><!-- End sidebar tags-->
+
+    </div><!-- End sidebar -->
+
+</div>
+<!-- ======= Tutorial Sidebar Fragment End======= -->
+
+
+<!-- ======= Footer Fragment Start======= -->
+<footer th:fragment="userFooter" id="footer">
+
+    <div class="footer-newsletter">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h4>Join Our Newsletter</h4>
+                    <p>Join us on this exciting journey of DIY discovery and let's make your home improvement dreams a
+                        reality!</p>
+                    <form action="" method="post">
+                        <input type="email" name="email"><input type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h3>Decorize Livspace</h3>
+                    <p>
+                        G.Narayanamma Institute of Technology & Science, Hyderabad. <br><br>
+                        <strong>Phone:</strong> +91 1234567890<br>
+                        <strong>Email:</strong> info@decorizeLivspace.com<br>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a th:href="@{/}">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a th:href="@{/tutorials}">Light Fixtures</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a th:href="@{/tutorials}">Painting</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a th:href="@{/tutorials}">Custom Storage Solutions</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a th:href="@{/tutorials}">Kitchen Upgrades</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a th:href="@{/tutorials}">Landscaping</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Social Networks</h4>
+                    <p>Thank you for your support!</p>
+                    <div class="social-links mt-3">
+                        <a href="https://twitter.com/" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+                        <a href="https://facebook.com/" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://instagram.com/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+                        <a href="https://skype.com/" class="google-plus" target="_blank"><i class="bx bxl-skype"></i></a>
+                        <a href="https://linkedin.com/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-4">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Decorize Livspace</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <b>Lidvitha Reddy</b> & <b>Gayathri Reddy</b> </a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+<!-- ======= Footer Fragment End======= -->
+
+</body>
+</html>

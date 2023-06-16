@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Tutorials Section</title>
+
+    <link th:href="@{/frontEnd/img/favicon.png}" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-EXAMPLE_HASH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" th:href="@{/frontEnd/css/blog.css}" />
+    <link rel="stylesheet" th:href="@{/frontEnd/css/home.css}" />
+
+</head>
+<body>
+
+<!-- ======= Header Fragment Start ======= -->
+<header th:replace="fragments/userFragments :: userHeader"></header>
+<!-- ======= Header Fragment End ======= -->
+
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a th:href="@{/}">Home</a></li>
+                <li>Tutorials</li>
+            </ol>
+            <br>
+            <h2>Comprehensive Tutorials and How-to Guides for DIY Enthusiasts</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+
+                <div class="col-lg-8 entries">
+
+                    <article class="entry" th:each="post : ${posts}">
+
+                        <div class="entry-img">
+                            <img th:src="@{/frontEnd/img/categories/LightFixtures/1.png}" alt="lightFixtures-1" class="img-fluid">
+
+                        </div>
+
+                        <h2 class="entry-title">
+                            <a th:href="@{/post/{id}(id=${post.id})}" th:text="${post.title}"></a>
+                        </h2>
+
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bx bx-category"></i> <a th:text="${post.category}"></a></li>
+                                <li class="d-flex align-items-center"><i class='bx bx-time-five' ></i> <a
+                                        href="#"><time datetime="2023-05-10">DATE</time></a></li>
+                                <li class="d-flex align-items-center"><i class='bx bx-comment-dots'></i> <a
+                                        href="#">COMMENTS</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="entry-content">
+                            <p th:text="${post.content}">
+                            </p>
+                            <div class="read-more">
+                                <a th:href="@{/post/{id}(id=${post.id})}">Read More</a>
+                            </div>
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+                </div><!-- End blog entries list -->
+
+
+                <!-- ======= Footer Fragment Start ======= -->
+                <div th:replace="fragments/userFragments :: tutorialSidebar"></div>
+                <!-- ======= Footer Fragment End ======= -->
+
+            </div>
+
+        </div>
+    </section><!-- End Blog Section -->
+
+</main><!-- End #main -->
+
+
+<!-- ======= Footer Fragment Start ======= -->
+<footer th:replace="fragments/userFragments :: userFooter"></footer>
+<!-- ======= Footer Fragment End ======= -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class='bx bx-chevrons-up'></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+
+<!-- Template Main JS File -->
+<script th:src="@{/frontEnd/js/home.js}"></script>
+<script th:src="@{/frontEnd/js/admin.js}"></script>
+
+</body>
+
+</html>

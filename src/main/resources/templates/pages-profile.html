@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Admin Dashboard</title>
+
+    <!--     Favicons -->
+    <link th:href="@{/frontEnd/img/favicon.png}" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-EXAMPLE_HASH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" th:href="@{/frontEnd/css/admin.css}" />
+</head>
+<body>
+
+
+<!-- ======= Header Fragment Start ======= -->
+<header th:replace="fragments/adminFragments :: adminHeader"></header>
+<!-- ======= Header Fragment End ======= -->
+
+<!-- ======= Sidebar Fragment Start ======= -->
+<aside th:replace="fragments/adminFragments :: adminSidebar"></aside>
+<!-- ======= Sidebar Fragment End ======= -->
+
+<!-- Start main -->
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Profile</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/adminDashboard}">Admin</a></li>
+                <li class="breadcrumb-item"><a th:href="@{/adminDashboard}">Dashboard</a></li>
+                <li class="breadcrumb-item active">User Profile</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+        <div class="row">
+            <div class="col-xl-4">
+
+                <div class="card">
+                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                        <img th:src="@{/frontEnd/img/profile-img.jpg}" alt="Profile" class="rounded-circle">
+                        <h2 th:text="${user.firstName + ' ' + user.lastName}"></h2>
+                        <h6>User</h6>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-xl-8">
+
+                <div class="card">
+                    <div class="card-body pt-3">
+                        <!-- Bordered Tabs -->
+                        <ul class="nav nav-tabs nav-tabs-bordered">
+
+                            <li class="nav-item">
+                                <button class="nav-link active" data-bs-toggle="tab"
+                                        data-bs-target="#profile-overview">Overview</button>
+                            </li>
+
+                            <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content pt-2">
+
+                            <div class="tab-pane fade show active profile-overview" id="profile-overview">
+<!--                                <h5 class="card-title">About</h5>-->
+<!--                                <p class="small fst-italic">CSE student at GNITS</p>-->
+
+                                <h5 class="card-title">Profile Details</h5>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label ">User ID</div>
+                                    <div th:text="${user.id}" class="col-lg-9 col-md-8"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">First Name</div>
+                                    <div th:text="${user.firstName}" class="col-lg-9 col-md-8"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Last Name</div>
+                                    <div th:text="${user.lastName}" class="col-lg-9 col-md-8"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Email ID</div>
+                                    <div th:text="${user.email}" class="col-lg-9 col-md-8"></div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                                <!-- Profile Edit Form -->
+
+                                <!-- End Profile Edit Form -->
+                            </div>
+                        </div><!-- End Bordered Tabs -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->
+
+<!-- ======= Footer Fragment Start======= -->
+<footer th:replace="fragments/adminFragments :: adminFooter"></footer>
+<!-- ======= Footer Fragment End ======= -->
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class='bx bx-chevrons-up'></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+
+<!-- Template Main JS File -->
+<script th:src="@{/frontEnd/js/home.js}"></script>
+<script th:src="@{/frontEnd/js/admin.js}"></script>
+
+
+</body>
+</html>
